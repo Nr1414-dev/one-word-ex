@@ -25,6 +25,8 @@ def validate(word):
         raise ValueError("entry must not carry surrounding whitespace")
     if any(ch.isspace() for ch in word):
         raise ValueError("entry must be exactly one word")
+    if not word.isalpha() or word != word.lower():
+        raise ValueError("entry must be a single lowercase word")
 
 
 def write_entry():
